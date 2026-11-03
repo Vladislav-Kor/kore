@@ -1,0 +1,7 @@
+/target/
+/dist/
+# Файлы работающего сторожа: журнал, состояние, стоп-флаг и черновик настроек.
+/guard/guard.log
+/guard/guard.status
+/guard/guard.stop
+/guard/guard.conf.tmp
