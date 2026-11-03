@@ -2,7 +2,7 @@
 
 use std::fs;
 use std::io::{self, Read, Seek, SeekFrom};
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::time::Duration;
 
 use crate::admin;
@@ -35,7 +35,7 @@ fn default_dir() -> PathBuf {
     let beside = std::env::current_exe().ok().and_then(|exe| exe.parent().map(|dir| dir.join("guard")));
     #[cfg(debug_assertions)]
     if !beside.as_ref().is_some_and(|dir| dir.exists()) {
-        return Path::new(env!("CARGO_MANIFEST_DIR")).join("guard");
+        return std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("guard");
     }
     beside.unwrap_or_else(|| PathBuf::from("guard"))
 }
